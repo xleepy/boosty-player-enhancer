@@ -1,12 +1,12 @@
 {
   "manifest_version": 3,
   "name": "Boosty Autoplay",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Автопроигрывание видео в посте Boosty и режим «На всё окно» со штатными элементами управления.",
   "permissions": ["storage"],
   "content_scripts": [{
     "matches": ["https://boosty.to/*"],
-    "js": ["content.js"],
+    "js": ["vk-player.js", "window-view.js", "autoplay.js", "content.js"],
     "css": ["content.css"],
     "run_at": "document_idle"
   }],
