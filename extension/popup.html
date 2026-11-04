@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <title>Boosty Autoplay</title>
+  <style>
+    body { width: 290px; margin: 0; padding: 20px; background: #1c1c20; color: #f4f4f5; font: 14px/1.5 system-ui, sans-serif; }
+    h1 { margin: 0 0 16px; font-size: 18px; }
+    label { display: flex; align-items: center; justify-content: space-between; font-weight: 600; }
+    input { width: 20px; height: 20px; accent-color: #e76535; }
+    p { color: #c7c7ce; margin: 14px 0 0; }
+    strong { color: #ff965c; }
+  </style>
+</head>
+<body>
+  <h1>Boosty Autoplay</h1>
+  <label>Автопроигрывание <input id="enabled" type="checkbox" disabled></label>
+  <p>Откройте пост Boosty и запустите первое видео. Следующие ролики включатся по порядку.</p>
+  <p><strong>Переключатель с треугольником ▶</strong> в плеере включает автопроигрывание.</p>
+  <p><strong>Прямоугольная иконка «На всё окно»</strong> разворачивает плеер на всю вкладку со всеми его кнопками. Вкладки и адресная строка Chrome остаются видимыми. Для возврата нажмите эту кнопку ещё раз или Esc.</p>
+  <p>После установки обновите уже открытые вкладки Boosty.</p>
+  <script src="popup.js"></script>
+</body>
+</html>

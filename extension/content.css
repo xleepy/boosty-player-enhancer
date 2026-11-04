@@ -1,0 +1,99 @@
+/* Window view fills the tab; players and native controls keep their DOM parents. */
+html[data-bpa-windowed] {
+  background: #000 !important;
+  overflow: hidden !important;
+}
+html[data-bpa-windowed] body { visibility: hidden !important; }
+html[data-bpa-windowed] [data-bpa-path] {
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  perspective: none !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  will-change: auto !important;
+  overflow: visible !important;
+  clip: auto !important;
+  clip-path: none !important;
+}
+/* These boxes are observed by Boosty before Play; display:contents makes them
+   zero-sized and causes repeated lazy unmount/mount of the paused player. */
+html[data-bpa-windowed] [data-bpa-player-path] {
+  display: block !important;
+  box-sizing: border-box !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  aspect-ratio: auto !important;
+  transform: none !important;
+  filter: none !important;
+  perspective: none !important;
+  contain: none !important;
+  content-visibility: visible !important;
+  will-change: auto !important;
+  overflow: visible !important;
+}
+html[data-bpa-windowed] [data-bpa-stage] {
+  display: block !important;
+  visibility: visible !important;
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  max-width: none !important;
+  max-height: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  transform: none !important;
+  background: #000 !important;
+  z-index: 2147483646 !important;
+}
+html[data-bpa-windowed] [data-bpa-stage] vk-video-player {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+}
+#bpa-status {
+  all: initial;
+  box-sizing: border-box;
+  position: fixed;
+  right: 20px;
+  bottom: 24px;
+  max-width: min(420px, calc(100vw - 40px));
+  padding: 14px 16px;
+  border: 1px solid #555;
+  border-radius: 12px;
+  background: #202024;
+  color: #fff;
+  box-shadow: 0 8px 32px #0006;
+  font: 14px/1.5 system-ui, sans-serif;
+  visibility: visible !important;
+  z-index: 2147483647 !important;
+}
+#bpa-status button {
+  all: initial;
+  display: inline-block;
+  margin-left: 12px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  color: #fff;
+  background: #c84312;
+  cursor: pointer;
+  font: 600 13px system-ui, sans-serif;
+}
+#bpa-status button:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }

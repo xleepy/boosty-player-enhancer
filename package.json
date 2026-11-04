@@ -1,0 +1,16 @@
+{
+  "name": "boosty-player-enhancer",
+  "version": "1.1.2",
+  "private": true,
+  "description": "Autoplay and window view for VK Video players in Boosty posts",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "check": "node --check extension/content.js && node --check extension/popup.js"
+  },
+  "engines": {
+    "node": "^22.12.0 || >=24.0.0"
+  },
+  "devDependencies": {
+    "jsdom": "28.1.0"
+  }
+}
