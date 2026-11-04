@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { JSDOM } = require('jsdom');
 
-const extensionRoot = path.resolve(__dirname, '../../extension');
+const extensionRoot = path.resolve(__dirname, '../../dist/extension');
 const POST = 'bf1407b6-54fd-4c33-96b5-310f2d57280f';
 const OTHER = '8116cf3e-a608-4005-893d-e16b22abb0e9';
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -17,7 +17,7 @@ async function eventually(check, message, timeout = 3500) {
   assert.fail(message);
 }
 
-// Runs the shipped content script against open Shadow DOM, not exported test hooks.
+// Runs the built extension's shipped content script, not source modules or test hooks.
 function fixture({ count = 3, lazyIndex = -1, storedEnabled = false,
   regionLabel = 'Video player', controlsInitially = true, lazyVideoInitially = false,
   beforeScripts = () => {} } = {}) {

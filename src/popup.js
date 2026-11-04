@@ -1,4 +1,3 @@
-'use strict';
 const toggle = document.getElementById('enabled');
 chrome.storage.local.get({ enabled: false }).then(settings => {
   toggle.checked = settings.enabled === true;
