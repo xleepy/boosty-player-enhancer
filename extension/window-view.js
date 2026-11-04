@@ -15,7 +15,7 @@
 (() => {
   'use strict';
 
-  const namespace = globalThis.BoostyEnhancer ||= {};
+  const namespace = globalThis.BoostyEnhancer;
 
   namespace.createWindowView = ({ isCurrent, onChange = () => {} }) => {
     const paths = new Map([

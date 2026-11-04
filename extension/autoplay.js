@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  const modules = globalThis.BoostyEnhancer ||= {};
+  const modules = globalThis.BoostyEnhancer;
 
   /*
    * Owns the queue and one cancellable transition, including its retry action.

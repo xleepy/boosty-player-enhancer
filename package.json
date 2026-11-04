@@ -1,6 +1,6 @@
 {
   "name": "boosty-player-enhancer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": true,
   "description": "Autoplay and window view for VK Video players in Boosty posts",
   "scripts": {

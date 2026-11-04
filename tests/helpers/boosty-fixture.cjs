@@ -19,7 +19,8 @@ async function eventually(check, message, timeout = 3500) {
 
 // Runs the shipped content script against open Shadow DOM, not exported test hooks.
 function fixture({ count = 3, lazyIndex = -1, storedEnabled = false,
-  regionLabel = 'Video player', controlsInitially = true, lazyVideoInitially = false } = {}) {
+  regionLabel = 'Video player', controlsInitially = true, lazyVideoInitially = false,
+  beforeScripts = () => {} } = {}) {
   const dom = new JSDOM('<!doctype html><html><body></body></html>', {
     url: `https://boosty.to/creator/posts/${POST}`,
     runScripts: 'outside-only', pretendToBeVisual: true,
@@ -205,6 +206,7 @@ function fixture({ count = 3, lazyIndex = -1, storedEnabled = false,
     if (i !== lazyIndex) mount(block, i);
   }
   const manifest = JSON.parse(fs.readFileSync(path.join(extensionRoot, 'manifest.json'), 'utf8'));
+  beforeScripts(window);
   for (const script of manifest.content_scripts[0].js) {
     window.eval(fs.readFileSync(path.join(extensionRoot, script), 'utf8'));
   }

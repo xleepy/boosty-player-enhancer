@@ -80,8 +80,11 @@
     return button;
   }
 
-  globalThis.BoostyEnhancer ||= {};
-  globalThis.BoostyEnhancer.createPlayers = function createPlayers({
+  // The first manifest script owns this registry in Chrome's isolated world.
+  // Define an own property: Window's named DOM elements must never become it.
+  const modules = Object.create(null);
+  Object.defineProperty(globalThis, 'BoostyEnhancer', { value: modules });
+  modules.createPlayers = function createPlayers({
     onPlay = () => {}, onEnded = () => {}, onAction = () => {}, onChange = () => {}
   } = {}) {
     const records = new Map();
